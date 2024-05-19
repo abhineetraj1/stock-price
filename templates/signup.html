@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Sign up</title>
+	<link rel="stylesheet" type="text/css" href="/static/sign.css">
+	<link rel="shortcut icon" href="/static/favicon.png">
+</head>
+<body>
+
+<center>
+	<form method="POST" action="/signup">
+		<p id="ft">Sign Up</p>
+		{% if error %}
+			<p id="err">{{msg}}</p>
+		{% endif %}
+		<input class="inp" placeholder="Enter username" name="username">
+		<input class="inp" placeholder="Enter password" type="password" name="password">
+		<button class="btn">Register</button>
+		<p id="extra">
+			<a class="lnk" href="/signin">login</a>
+			<a class="lnk" href="/">back</a>
+		</p>
+	</form>
+</center>
+<script type="text/javascript" src="/static/cursor.js"></script>
+
+</body>
+</html>

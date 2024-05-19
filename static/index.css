@@ -1,0 +1,42 @@
+body{
+	cursor: none;
+	background: white;
+	margin: 0px;
+	height: 100vh;
+	padding: 0px;
+	font-family: Cambria Math;
+}
+#tt{
+	margin: 2%;
+	width: 96%;
+	font-size: 25px;
+	font-weight: bold;
+	display: flex;
+	justify-content: space-between;
+}
+.btn{
+	background: black;
+	cursor: none;
+	color: white;
+	padding: 7px;
+	padding-left: 14px;
+	padding-right: 14px;
+	font-size: 16px;
+	border: solid;
+	border-color: black;
+	border-radius: 8px;
+}
+.btn:hover{
+	background: white;
+	border-color: white;
+	color: black;
+	box-shadow: 0px 0px 10px black;
+}
+#desc{
+	margin: 10%;
+	margin-bottom: 2%;
+	font-size: 20px;
+	width: 80%;
+	text-align: center;
+	color: black;
+}

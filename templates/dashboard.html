@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Dashboard</title>
+	<link rel="stylesheet" type="text/css" href="/static/dashboard.css">
+	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+	<link rel="shortcut icon" href="/static/favicon.png">
+</head>
+<body>
+
+
+<nav>StockPrice  <button class="btn" onclick="logout()">Logout</button></nav>
+
+<form method="POST" action="/dashboard">
+	<select name="stock">
+		{% for i in stocks %}
+			<option value="{{i[0]}}">{{i[0]}} - {{i[1]}}</option>
+		{% endfor %}
+	</select>
+	<button class="btn">Update</button>
+</form>
+{% if chart == True %}
+	<div id="myChart" style="width:90%;margin: 5%;background: black;"></div>
+	<script>
+	google.charts.load('current',{packages:['corechart']});
+	google.charts.setOnLoadCallback(drawChart);
+	
+	function drawChart() {
+	const data = google.visualization.arrayToDataTable([
+	  ['Price', 'Price (in USD)'],
+	  {% for i in stock_data %}
+	  	['{{i[0]}}',{{i[1]}}],
+	  {% endfor %}
+	  ]);
+	// Set Options
+	const options = {
+	  title: '{{stock_name}}',
+	  hAxis: {title: 'Date'},
+	  vAxis: {title: 'Price (in USD)'},
+	  legend: 'none'
+	};
+	// Draw
+	const chart = new google.visualization.LineChart(document.getElementById('myChart'));
+	chart.draw(data, options);
+	}
+	</script>
+{% endif %}
+
+<script type="text/javascript">
+	localStorage.setItem("username","{{username}}");
+	localStorage.setItem("password","{{password}}");
+</script>
+<script src="/static/dashboard.js"></script>
+<script type="text/javascript" src="/static/cursor.js"></script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+body{
+	padding: 0;
+	margin: 0;
+	height: 100vh;
+	cursor: none;
+	font-family: Cambria Math;
+}
+nav{
+	display: flex;
+	justify-content: space-between;
+	width: 96%;
+	margin: 2%;
+	font-weight: bold;
+	font-size: 25px;
+}
+.btn{
+	cursor: none;
+	background: black;
+	color: white;
+	padding: 6px;
+	font-size: 14px;
+	cursor: none;
+	border: solid;
+	border-radius: 10px;
+	border-color: black;
+}
+.btn:hover{
+	background: white;
+	border: solid;
+	cursor: none;
+	border-color: black;
+	color: black;
+}
+#dbh{
+	width: 90%;
+	margin: 5%;
+	cursor: none;
+	margin-top: 0%;
+	height: 400px;
+	background: black;
+	box-shadow: 0px 0px 10px black;
+}
+.stck{
+	cursor: none;
+	background: green;
+	float: left;
+	margin-top: 10px;
+	margin-left: 10px;
+	height: 390px;
+}
+#myChart{
+	cursor: none;
+}
+option{
+	cursor: none;
+}
+form{
+	cursor: none;
+	text-align: center;
+}
+select{
+	border: none;
+	cursor: none;
+	background: white;
+	appearance: none;
+	border-bottom: solid;
+}
